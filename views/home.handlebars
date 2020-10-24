@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandi's Clothing Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        {{!-- 
+            pg user --- coder
+            pg db --- nandi
+            pg password --- luyolo
+         --}}
+        <header>
+            <ul>
+                <a href="#" class="nandi">
+                    <li>nandi's.<strong style="color: #CE3B29;">BOUTIQUE</strong></li>
+                </a>
+                <a href="/shop">
+                    <li>SHOP</li>
+                </a>
+                <a href="#products">
+                    <li>PRODUCTS</li>
+                </a>
+                <a href="#about">
+                    <li>ABOUT</li>
+                </a>
+                <a href="#enquiery">
+                    <li>ENQUIRY</li>
+                </a>
+                <a href="#">
+                    <li>CREATE ACCOUNT</li>
+                </a>
+            </ul>
+        </header>
+
+        <section class="home">
+            <div class="center-con">
+                <a href="#products">
+                    <div class="round">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <br>
+
+        {{!-- my products --}}
+        <section class="products" id="products">
+            <h1>Featured Products</h1>
+            <div class="products-sold">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="/cart"><img src="/IMAGES/dress1.jpg" alt=""></a>
+                            <strong class="item-name">Basic Summer Dress</strong>
+                            Color of item <br>
+                            R250
+                        </td>
+                        <td>
+                            <a href="#"><img src="/IMAGES/tshirts/shirt.jpg" alt=""></a>
+                            <strong class="item-name">Lorem, ipsum.</strong>
+                            Color of item <br>
+                            R180
+                        </td>
+                        <td>
+                            <a href="#"><img src="/IMAGES/shorts/1.jpg" alt=""></a>
+                            <strong class="item-name">Lorem, ipsum.</strong>
+                            Color of item <br>
+                            R180
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="/IMAGES/shades/shades.jpg" alt=""></a>
+                            <strong class="item-name">Lorem, ipsum.</strong>
+                            Color of item <br>
+                            R180
+                        </td>
+                        <td>
+                            <a href="#"><img src="/IMAGES/crop/1.jpg" alt=""></a>
+                            <strong class="item-name">Lorem, ipsum.</strong>
+                            Color of item <br>
+                            R180
+                        </td>
+                        <td>
+                            <a href="#"><img src="/IMAGES/caps/1.jpg" alt=""></a>
+                            <strong class="item-name">Lorem, ipsum.</strong>
+                            Color of item <br>
+                            R180
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <div class="content">
+                <div class="box">
+                    <h2>Customer Care</h2>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers At Nandi's</a></li>
+                        <li><a href="#">FAQS</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Store Location</a></li>
+                    </ul>
+                </div>
+                <div class="box" id="about">
+                    <h2>About</h2>
+                    <p>Nandi's boutique is a destination for style seekers. Located in Waterfront, Cape Town dedicated
+                        to ethical fashion
+                        and accessories.</p>
+
+                    <p>Spliced on the rack, you will discover a mix of your favourite boutique labels, lounge-wear and
+                        lifestyle
+                        products. Nandi presents small, regular collections from designers that are limited in nature
+                        with a high
+                        rotation. For man and women between the ages 16 - 28, all sizes, Nandi's is the go-to fashion
+                        boutique. Purchases made at Nandi's
+                        support suppliers and makers within South Africa - shop local, shop small!</p>
+
+                    <p>Feel inspired exploring a beautifully designed space that reflects a love for styling and
+                        creating. Style tips
+                        await from a small, warm team who adore fashion- the current, the classic and the refined.</p>
+
+                    <p>A truly authentic element of the store, owner Nandi Nkosi, produces in-house clothing labels.
+                        Shoppers can order different colours in signature styles, and select from seasonal pieces
+                        available instore.</p>
+
+                    <div>
+                        &copy; Nandi's Clothing Line 2020
+                    </div>
+                </div>
+                <div class="box" id="enquiery">
+                    <h2>Enquiery</h2>
+                    <form action="#enquiery" method="POST">
+                        <h3>Keep In Touch</h3>
+                        
+                        <input name="name" type="text" required placeholder="Name">                        
+                        <input name="email" type="email" required placeholder="Email">
+                        <textarea name="message" placeholder="Message..."></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div>
+                        {{feedback}}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

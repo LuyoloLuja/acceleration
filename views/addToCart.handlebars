@@ -1,0 +1,38 @@
+<div class="container">
+    <header>
+        <ul>
+            <a href="/" class="nandi"><li>nandi's.<strong style="color: #CE3B29;">BOUTIQUE</strong></li></a>
+            <a href="/shop"><li>SHOP</li></a>
+            <a href="#products"><li>PRODUCTS</li></a>
+            <a href="#about"><li>ABOUT</li></a>
+            <a href="#enquiery"><li>ENQUIRY</li></a>
+            <a href="#"><li>CREATE ACCOUNT</li></a>
+        </ul>
+    </header>
+
+    <div class="shoppingCart">
+        {{!-- image should not be hard coded --}}
+        <img src="/IMAGES/dress1.jpg" alt="">
+    
+        {{!-- need to find appropriate inputs --}}
+        <form action="/cart" method="GET">
+                <h3>Sizes</h3>
+                <select id="sizes">
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+            
+                <h3>Quantity</h3>
+                <select id="quantity">
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                </select>
+            <input type="submit">
+        </form>
+    </div>
+
+</div>
