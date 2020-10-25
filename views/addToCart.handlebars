@@ -12,12 +12,13 @@
 
     <div class="shoppingCart">
         {{!-- image should not be hard coded --}}
-        <img src="/IMAGES/dress1.jpg" alt="">
+        <img name="dress" src="/IMAGES/dress1.jpg" alt="">
+        <span>{{price}}</span>
     
         {{!-- need to find appropriate inputs --}}
-        <form action="/cart" method="GET">
+        <form action="/addToCart" method="POST">
                 <h3>Sizes</h3>
-                <select id="sizes">
+                <select id="sizes" name="size">
                     <option value="XS">XS</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
@@ -25,7 +26,7 @@
                 </select>
             
                 <h3>Quantity</h3>
-                <select id="quantity">
+                <select id="quantity" name="quantity">
                     <option value="one">1</option>
                     <option value="two">2</option>
                     <option value="three">3</option>
@@ -33,6 +34,9 @@
                 </select>
             <input type="submit">
         </form>
+        <div>
+            {{productChosen}}
+        </div>
     </div>
 
 </div>
