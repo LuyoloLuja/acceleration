@@ -14,8 +14,8 @@ module.exports = function Nandis(pool){
         }
     }
 
-    async function customerProducts(customerName,product){
-        if(customerName,product){
+    async function customerProducts(customerName, product){
+        if(customerName, product){
             await pool.query('INSERT INTO customer (customer_name, customer_product) VALUES (customerName, product)');
         }
     }

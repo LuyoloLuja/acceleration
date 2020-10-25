@@ -34,11 +34,11 @@ app.post('/', function (req, res){
 });
 })
 app.get('/cart', function(req, res){
-  let price = women_dresses.price;
+  // let price = women_dresses.price;
 
 
   res.render('addToCart', {
-    price
+    // price
   })
 })
 

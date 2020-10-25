@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 html {
     scroll-behavior: smooth;
     background-color: #fff;
@@ -11,11 +12,11 @@ body {
 }
 header {
     margin: 0;
+    background-color: #fff;
 }
 header ul {
     list-style-type: none;
     display: flex;
-    /* padding: 15px; */
 }
 header ul a {
     text-decoration: none;
@@ -41,6 +42,7 @@ header ul a:first-child:hover {
     background-image: url("/IMAGES/bg.jpg");
     height: 46em;
     background-size: cover;
+    margin: 0;
     /* background-repeat: no-repeat; */
 }
 .home .center-con {
@@ -128,6 +130,9 @@ h1 {
     font-size: 40px;
     font-weight: lighter;
 }
+h2 {
+    font-weight: lighter;
+}
 .products .products-sold {
     width: 80%;
     margin-left: auto;
@@ -169,13 +174,12 @@ footer .content h2 {
     border-bottom: 1px solid #000;
 }
 footer .content div {
-    padding: 15px;
+    padding: 30px;
 }
 footer .box form {
     width: 100%;
 }
 footer .box form input, textarea {
-    font-weight: bold;
     outline: none;
     display: block;
     background-color: #E6E6E6;
@@ -186,17 +190,18 @@ footer .box form input, textarea {
     width: 90%;
 }
 footer .box form textarea {
-    height: 10em;
+    height: 8em;
     resize: none;
 }
 footer .box form button {
     width: 100%;
     margin: 15px 0;
-    padding: 15px;
+    padding: 20px;
     border: none;
     border-radius: 30px;
     background-color: #000;
     font-weight: bold;
+    outline: none;
     color: #fff;
     cursor: pointer;
 }
@@ -232,20 +237,53 @@ footer .box ul li a:hover {
     /* -webkit-box-shadow: 0 0 8px #000;
     box-shadow: 0 0 8px #000; */
 }
-/* needs work */
-.fun img {
-    /* background-image: url("/IMAGES/shopping.jpg"); */
+.cart {
+    background-color: #F7F7F7;
+    height: 100%;
     width: 100%;
 }
 .shoppingCart {
-    width: 30%;
     display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid #000; */
+    height: 40em;
+}
+.shoppingCart img, form {
     padding: 40px;
 }
-.shoppingCart div {
-    padding: 40px;
+.shoppingCart form {
+    /* border: 1px solid #000; */
+    width: 40%;
+}
+.shoppingCart form h3 {
+    font-size: medium;
+    text-align: center;
+}
+.shoppingCart form select {
+    width: 100%;
+    border: none;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 10px;
+    font-size: medium;
+    cursor: pointer;
+}
+.shoppingCart form button {
+    margin-top: 2em;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 15px 0;
+    font-weight: normal;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+.shoppingCart form button:hover {
+    background-color: #000;
+    color: #fff;
 }

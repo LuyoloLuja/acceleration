@@ -1,42 +1,45 @@
-<div class="container">
+<div class="cart">
     <header>
         <ul>
             <a href="/" class="nandi"><li>nandi's.<strong style="color: #CE3B29;">BOUTIQUE</strong></li></a>
             <a href="/shop"><li>SHOP</li></a>
-            <a href="#products"><li>PRODUCTS</li></a>
             <a href="#about"><li>ABOUT</li></a>
             <a href="#enquiery"><li>ENQUIRY</li></a>
             <a href="#"><li>CREATE ACCOUNT</li></a>
         </ul>
     </header>
-
+    <br><br><br>
     <div class="shoppingCart">
         {{!-- image should not be hard coded --}}
         <img name="dress" src="/IMAGES/dress1.jpg" alt="">
-        <span>{{price}}</span>
+        
+        {{!-- <div>
+            {{productChosen}}
+            <span>{{price}}</span>
+        </div> --}}
     
         {{!-- need to find appropriate inputs --}}
         <form action="/addToCart" method="POST">
+        
                 <h3>Sizes</h3>
-                <select id="sizes" name="size">
+                <select id="sizes" name="size"
+                    <option value="XS">XS</option>
                     <option value="XS">XS</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                 </select>
-            
+                <br><br>
                 <h3>Quantity</h3>
                 <select id="quantity" name="quantity">
-                    <option value="one">1</option>
-                    <option value="two">2</option>
-                    <option value="three">3</option>
-                    <option value="four">4</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                    <option value="three">Three</option>
+                    <option value="four">Four</option>
                 </select>
-            <input type="submit">
+            <button type="submit">Add To Cart</button>
         </form>
-        <div>
-            {{productChosen}}
-        </div>
+        
     </div>
 
 </div>
