@@ -287,3 +287,36 @@ footer .box ul li a:hover {
     background-color: #000;
     color: #fff;
 }
+.pop-up {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display this in expressjs */
+    display: none;
+}
+.pop-up .content {
+    width: 800px;
+    background-color: #fff;
+    position: relative;
+}
+.pop-up .content .close {
+    text-align: center;
+}
+.pop-up .content .close h1 {
+    display: inline-block;
+}
+.pop-up .content .close a {
+    font-size: 55px;
+    text-decoration: none;
+    padding-right: 10px;
+    position: absolute;
+    color: #000;
+    transform: rotate(45deg);
+    top: 0;
+    right: 0;
+}

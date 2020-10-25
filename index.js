@@ -33,9 +33,18 @@ app.post('/', function (req, res){
     feedback
 });
 })
+
 app.get('/cart', function(req, res){
   // let price = women_dresses.price;
+  // res.sendFile ("./images.html");
 
+  res.render('addToCart', {
+    // price
+  })
+})
+app.post('/addToCart', function(req, res){
+  // let price = women_dresses.price;
+  // res.sendFile ("./images.html");
 
   res.render('addToCart', {
     // price
@@ -43,9 +52,9 @@ app.get('/cart', function(req, res){
 })
 
 // app.post('/cart', async function(req, res){
-//   const {dress, size, quantity} = req.body;
-//   let productChosen = await nandis.buyDresses(size, quantity, dress);
-//   console.log(size, quantity, dress);
+//   // const {dress, size, quantity} = req.body;
+//   // let productChosen = await nandis.buyDresses(size, quantity, dress);
+//   console.log(req.body);
 
 //   res.render('addToCart', {
 //     productChosen
