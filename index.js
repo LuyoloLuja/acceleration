@@ -23,14 +23,14 @@ app.set('view engine', 'handlebars');
 
 app.get('/', async function (req, res) {
 
-  let table = await pool.query('select * from women_dresses_info join women_dresses on women_dresses_info.dress_number = women_dresses.id;');
+  let table = await pool.query('select * from women_dresses_info join women_dresses on women_dresses_info.dress_type = women_dresses.id;');
   
   var dressOne = table.rows;
   for (const key in dressOne) {
     var element = dressOne[key];
     var price = element.price;
     var size = element.size;
-    var dressType = element.dress_number;
+    var dressType = element.dress_type;
   }
 
   res.render('home', {
@@ -50,20 +50,12 @@ app.post('/', async function (req, res) {
   });
 })
 
-app.get('/cart', async function (req, res) {
-
-
-
-  res.render('addToCart', {
-
-  })
+app.get('/cart', function (req, res) {
+  res.render('addToCart')
 })
 
 app.post('/addToCart', function (req, res) {
-
-  res.render('addToCart', {
-    // price
-  })
+  res.render('addToCart')
 })
 
 app.get('/shop', function (req, res) {

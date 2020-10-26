@@ -33,8 +33,9 @@ const dressType = async (dress) => {
         if(name, email, message){
             name = name.toUpperCase();
             
-            await pool.query('INSERT INTO customerEnq (customer_name, customer_email, customer_msg) VALUES (name, email, message)');
-            return `Thank you ${name}. We have received your enquiry, we'll get back to you!`;
+            // await pool.query('INSERT INTO customerEnq (customer_name, customer_email, customer_msg) VALUES (name, email, message)',[name,email,message]);
+
+            return `Thank you. We have received your enquiry, we'll get back to you!`;
         }
     }
 
