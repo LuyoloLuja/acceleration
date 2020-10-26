@@ -24,7 +24,6 @@ app.set('view engine', 'handlebars');
 app.get('/', async function (req, res) {
 
   let table = await pool.query('select * from women_dresses_info join women_dresses on women_dresses_info.dress_number = women_dresses.id;');
-  console.log(table);
   
   var dressOne = table.rows;
   for (const key in dressOne) {
@@ -38,10 +37,7 @@ app.get('/', async function (req, res) {
     data: table.rows[0],
     size,
     price,
-    dressType,
-    secondPrice,
-    secondSize,
-    secondDress
+    dressType
   });
 });
 

@@ -204,4 +204,4 @@ CREATE TABLE customerEnq(
     customer_name TEXT NOT NULL,
     customer_email TEXT NOT NULL,
     customer_msg TEXT NOT NULL
-)
+);
