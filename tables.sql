@@ -199,10 +199,9 @@ INSERT INTO shades(id, price) VALUES(3, 250);
 INSERT INTO shades(id, price) VALUES(4, 200);
 
 -- ---------------------------------------------------------------
-
--- table for all products
-
--- CREATE TABLE products(
---     product_id SERIAL NOT NULL PRIMARY KEY,
---     product_name TEXT NOT NULL
--- );
+CREATE TABLE customerEnq(
+    id SERIAL NOT NULL PRIMARY KEY,
+    customer_name TEXT NOT NULL,
+    customer_email TEXT NOT NULL,
+    customer_msg TEXT NOT NULL
+)

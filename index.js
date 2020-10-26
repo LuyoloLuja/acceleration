@@ -1,11 +1,11 @@
 let express = require('express');
 let app = express();
-const exphbs  = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const pg = require("pg");
 const Pool = pg.Pool;
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:luyolo@localhost:5432/nandi';
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/nandi';
 
 const pool = new Pool({
   connectionString
@@ -18,68 +18,64 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
-  res.render('home');
+app.get('/', async function (req, res) {
+
+  let table = await pool.query('select * from women_dresses_info join women_dresses on women_dresses_info.dress_number = women_dresses.id;');
+  console.log(table);
+  
+  var dressOne = table.rows;
+  for (const key in dressOne) {
+    var element = dressOne[key];
+    var price = element.price;
+    var size = element.size;
+    var dressType = element.dress_number;
+  }
+
+  res.render('home', {
+    data: table.rows[0],
+    size,
+    price,
+    dressType,
+    secondPrice,
+    secondSize,
+    secondDress
+  });
 });
 
-app.post('/', function (req, res){
-  const {name, email, message} = req.body;
+app.post('/', async function (req, res) {
+  const {enq_name, email, message} = req.body;
 
-  let feedback = nandis.customerEnquiery(name, email, message);
+  let feedback = await nandis.customerEnquiery(enq_name, email, message);
   res.render('home', {
     feedback
-});
+  });
 })
 
-app.get('/cart', function(req, res){
-  // let price = women_dresses.price;
-  // res.sendFile ("./images.html");
+app.get('/cart', async function (req, res) {
+
+
+
+  res.render('addToCart', {
+
+  })
+})
+
+app.post('/addToCart', function (req, res) {
 
   res.render('addToCart', {
     // price
   })
 })
-app.post('/addToCart', function(req, res){
-  // let price = women_dresses.price;
-  // res.sendFile ("./images.html");
 
-  res.render('addToCart', {
-    // price
-  })
-})
-
-// app.post('/cart', async function(req, res){
-//   // const {dress, size, quantity} = req.body;
-//   // let productChosen = await nandis.buyDresses(size, quantity, dress);
-//   console.log(req.body);
-
-//   res.render('addToCart', {
-//     productChosen
-//   })
-// })
-
-// app.post('/', async function(req, res){
-//   const {dress, size, quantity} = req.body;
-//   let productChosen = await nandis.buyDresses(size, quantity, dress);
-
-//   res.render('addToCart', {
-//     productChosen
-//   })
-// })
-
-app.get('/shop', function(req, res){
+app.get('/shop', function (req, res) {
   res.render('shop')
-})
-
-app.get('/form', function(req, res){
-  res.render('form')
 })
 
 let PORT = process.env.PORT || 3030;
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
   console.log('App starting on port', PORT);
 });

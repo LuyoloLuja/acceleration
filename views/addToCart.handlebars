@@ -5,8 +5,8 @@
                 <li>nandi's.<strong style="color: #CE3B29;">BOUTIQUE</strong></li>
             </a>
             <a href="/">
-                    <li>HOME</li>
-                </a>
+                <li>HOME</li>
+            </a>
             <a href="/shop">
                 <li>SHOP</li>
             </a>
@@ -26,17 +26,18 @@
         {{!-- image should not be hard coded --}}
         <img name="dress" src="/IMAGES/dress1.jpg" alt="">
 
-        {{!-- <div>
-            {{productChosen}}
-            <span>{{price}}</span>
-        </div> --}}
+        <div>
+            {{#each data}}
+            <span>{{this.price}} {{this.id}}</span>
+            {{/each}}
+        </div>
 
         {{!-- need to find appropriate inputs --}}
         <div class="pop-up">
             <div class="content">
                 <div class="close">
                     <h1 style="">Your Cart</h1>
-                    <a href="#">+</a>              
+                    <a href="/cart">+</a>
                 </div>
                 <table>
                     <tr>
@@ -54,7 +55,7 @@
                     <tr>
                         <td>iuguyfuyf</td>
                     </tr>
-                    
+
                 </table>
 
             </div>
@@ -80,8 +81,6 @@
             <button type="submit">Add To Cart</button>
         </form>
     </div>
-
-    
 
     <footer>
         <div class="content">
@@ -129,7 +128,7 @@
                 <form action="#enquiery" method="POST">
                     <h3>Keep In Touch</h3>
 
-                    <input name="name" type="text" required placeholder="Name">
+                    <input name="enq_name" type="text" required placeholder="Name">
                     <input name="email" type="email" required placeholder="Email">
                     <textarea name="message" placeholder="Message..."></textarea>
                     <button type="submit">Submit</button>
